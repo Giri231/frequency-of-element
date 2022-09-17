@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int a[n];
+    int count;
+    int fre[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+        fre[i]=-1;
+    }
+    for(int i=0;i<n;i++)
+   
+    {
+        count=1;
+        
+        for(int j=i+1;j<n;j++)
+        {
+            if(a[i]==a[j])
+            {
+                count++;
+                fre[j]=0;
+            }
+            
+        }
+        if(fre[i]!=0)
+        {
+            fre[i]=count;
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(fre[i]!=0)
+        {
+        cout<<a[i]<<"occur" <<fre[i]<<endl;
+        }
+    }
+}
